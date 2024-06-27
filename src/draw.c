@@ -19,6 +19,7 @@ void draw(SDL_Instance instance, char **map, double_s play, double_s dir,
 {
 	draw_background(instance);
 	draw_walls(map, play, instance, dir, plane);
+	playerWeapon();
 	SDL_RenderPresent(instance.renderer);
 }
 
