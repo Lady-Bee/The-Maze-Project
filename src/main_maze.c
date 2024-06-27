@@ -1,4 +1,4 @@
-/i*
+/*
  * File: main_maze.c
  *
  *

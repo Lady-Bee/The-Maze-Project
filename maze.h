@@ -22,6 +22,7 @@
 
 #define MAP_WIDTH 24
 #define MAP_HEIGHT 24
+#define gun_scale 0.25
 
 /**
  * struct SDL_Instance - Struct for SDL rendering in window
@@ -113,6 +114,9 @@ void draw(SDL_Instance, char **, double_s, double_s, double_s);
 void draw_walls(char **, double_s, SDL_Instance, double_s, double_s);
 void choose_color(SDL_Instance, char **, int_s, int);
 void draw_background(SDL_Instance);
+
+/* GUN FUNCTION */
+void playerWeapon();
 
 /* Handle player movement/rotation: move.c */
 void rotate(double_s *, double_s *, int);
