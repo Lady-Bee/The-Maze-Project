@@ -99,19 +99,20 @@ void choose_color(SDL_Instance instance, char **map, int_s coord, int hit_side)
 		switch (map[coord.x][coord.y])
 		{
 		case '1':
-			/* Red walls */
-			if (hit_side == 0)
-				SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0, 0xFF);
-			else
-				SDL_SetRenderDrawColor(instance.renderer, 0x88, 0, 0, 0xFF);
-			break;
-		case '2':
 			/* Green Walls */
-			if (hit_side == 0)
-				SDL_SetRenderDrawColor(instance.renderer, 0, 0xFF, 0, 0xFF);
-			else
-				SDL_SetRenderDrawColor(instance.renderer, 0, 0x88, 0, 0xFF);
-			break;
+                        if (hit_side == 0)
+                                SDL_SetRenderDrawColor(instance.renderer, 0, 0xFF, 0, 0xFF);
+                        else
+                                SDL_SetRenderDrawColor(instance.renderer, 0, 0x88, 0, 0xFF);
+                        break;
+		case '2':
+			/* Red walls */
+                        if (hit_side == 0)
+                                SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0, 0xFF);
+                        else
+                                SDL_SetRenderDrawColor(instance.renderer, 0x88, 0, 0, 0xFF);
+                        break;
+
 		case '3':
 			/* Blue Walls */
 			if (hit_side == 0)
