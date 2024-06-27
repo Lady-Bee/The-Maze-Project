@@ -34,9 +34,9 @@ void draw_background(SDL_Instance instance)
 
 	for (x = 0; x <= SCREEN_WIDTH; x++)
 	{
-		SDL_SetRenderDrawColor(instance.renderer, 0, 0xDD, 0xFF, 0xFF);
+		SDL_SetRenderDrawColor(instance.renderer, 0XFF, 0, 0xFF, 0xFF);
 		SDL_RenderDrawLine(instance.renderer, x, 0, x, SCREEN_HEIGHT / 2);
-		SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0xFF, 0xFF);
+		SDL_SetRenderDrawColor(instance.renderer, 0, 0xDD, 0xFF, 0xFF);
 		SDL_RenderDrawLine(instance.renderer, x, SCREEN_HEIGHT / 2, x,
 				   SCREEN_HEIGHT);
 	}
