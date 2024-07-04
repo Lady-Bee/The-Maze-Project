@@ -19,6 +19,7 @@ void draw(SDL_Instance instance, char **map, double_s play, double_s dir,
 {
 	draw_background(instance);
 	draw_walls(map, play, instance, dir, plane);
+	playerWeapon();
 	SDL_RenderPresent(instance.renderer);
 }
 
@@ -33,9 +34,9 @@ void draw_background(SDL_Instance instance)
 
 	for (x = 0; x <= SCREEN_WIDTH; x++)
 	{
-		SDL_SetRenderDrawColor(instance.renderer, 0, 0xDD, 0xFF, 0xFF);
+		SDL_SetRenderDrawColor(instance.renderer, 0XFF, 0, 0xFF, 0xFF);
 		SDL_RenderDrawLine(instance.renderer, x, 0, x, SCREEN_HEIGHT / 2);
-		SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0xFF, 0xFF);
+		SDL_SetRenderDrawColor(instance.renderer, 0, 0xDD, 0xFF, 0xFF);
 		SDL_RenderDrawLine(instance.renderer, x, SCREEN_HEIGHT / 2, x,
 				   SCREEN_HEIGHT);
 	}
@@ -98,19 +99,20 @@ void choose_color(SDL_Instance instance, char **map, int_s coord, int hit_side)
 		switch (map[coord.x][coord.y])
 		{
 		case '1':
-			/* Red walls */
-			if (hit_side == 0)
-				SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0, 0xFF);
-			else
-				SDL_SetRenderDrawColor(instance.renderer, 0x88, 0, 0, 0xFF);
-			break;
-		case '2':
 			/* Green Walls */
-			if (hit_side == 0)
-				SDL_SetRenderDrawColor(instance.renderer, 0, 0xFF, 0, 0xFF);
-			else
-				SDL_SetRenderDrawColor(instance.renderer, 0, 0x88, 0, 0xFF);
-			break;
+                        if (hit_side == 0)
+                                SDL_SetRenderDrawColor(instance.renderer, 0, 0xFF, 0, 0xFF);
+                        else
+                                SDL_SetRenderDrawColor(instance.renderer, 0, 0x88, 0, 0xFF);
+                        break;
+		case '2':
+			/* Red walls */
+                        if (hit_side == 0)
+                                SDL_SetRenderDrawColor(instance.renderer, 0xFF, 0, 0, 0xFF);
+                        else
+                                SDL_SetRenderDrawColor(instance.renderer, 0x88, 0, 0, 0xFF);
+                        break;
+
 		case '3':
 			/* Blue Walls */
 			if (hit_side == 0)
