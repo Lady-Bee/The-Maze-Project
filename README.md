@@ -14,8 +14,10 @@ To start the game
 
 First clone the repo - https://github.com/Lady-Bee/The-Maze-Project.git
 
-Compile all .c files 
+Compile all .c files - 
+ 
 gcc -g -Wall -Werror -Wextra -pedantic -I/usr/local/include/SDL2 ./src/*.c -o maze -L/usr/lib/x86_64-linux-gnu -lSDL2 -lm
 
-Run the maze
+Run the maze - 
+
 ./maze maps/level_1
